@@ -44,10 +44,9 @@ public class DriverFactory {
     }
 
     private static void initAndroidDriver(){
-        AppiumDriver<MobileElement> appiumDriver = null;
+//        AppiumDriver<MobileElement> appiumDriver = null;
 
         // Specify capabilities
-
         DesiredCapabilities desireCaps = new DesiredCapabilities();
         desireCaps.setCapability(MobileCapabilityTypeEx.PLATFORM_NAME, "android");
         desireCaps.setCapability(MobileCapabilityTypeEx.AUTOMATION_NAME, "uiautomator2");
@@ -56,7 +55,7 @@ public class DriverFactory {
         desireCaps.setCapability(MobileCapabilityTypeEx.APP_ACTIVITY, "com.wdiodemoapp.MainActivity");
 
         // Send the desiredCaps into appium server
-        androidDriver = new AndroidDriver<MobileElement>(appiumServer.getUrl(), desireCaps);
-        androidDriver.manage().timeouts().implicitlyWait(3L, TimeUnit.SECONDS);
+        androidDriver = new AndroidDriver<MobileElement>(appiumServer.getUrl(),desireCaps);
+        androidDriver.manage().timeouts().implicitlyWait(3L,TimeUnit.SECONDS);
     }
 }
